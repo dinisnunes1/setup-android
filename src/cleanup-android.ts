@@ -29,7 +29,7 @@ async function run(): Promise<void> {
       )
     }
 
-    console.log("generateJobSummary" + generateJobSummary) 
+    console.log('generateJobSummary' + generateJobSummary) // eslint-disable-line no-console,prefer-template
     if (generateJobSummary) {
       await renderSummary(
         sdkVersion,
