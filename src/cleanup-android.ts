@@ -29,7 +29,12 @@ async function run(): Promise<void> {
       )
     }
 
-    console.log('generateJobSummary' + generateJobSummary) // eslint-disable-line no-console,prefer-template
+    console.log('generateJobSummary ' + generateJobSummary) // eslint-disable-line no-console,prefer-template
+    console.log('generateJobSummary typeof ' + typeof generateJobSummary) // eslint-disable-line no-console,prefer-template
+    console.log('_________________') // eslint-disable-line no-console
+    console.log('cacheDisabled ' + cacheDisabled) // eslint-disable-line no-console,prefer-template,
+    console.log('cacheDisabled typeof ' + typeof cacheDisabled) // eslint-disable-line no-console,prefer-template
+
     if (generateJobSummary) {
       await renderSummary(
         sdkVersion,

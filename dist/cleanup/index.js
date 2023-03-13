@@ -59338,7 +59338,11 @@ function run() {
             if (!cacheDisabled) {
                 savedCacheEntry = yield (0, cache_1.saveCache)(sdkVersion, buildToolsVersion, ndkVersion, cmakeVersion);
             }
-            console.log('generateJobSummary' + generateJobSummary); // eslint-disable-line no-console,prefer-template
+            console.log('generateJobSummary ' + generateJobSummary); // eslint-disable-line no-console,prefer-template
+            console.log('generateJobSummary typeof ' + typeof generateJobSummary); // eslint-disable-line no-console,prefer-template
+            console.log('_________________'); // eslint-disable-line no-console
+            console.log('cacheDisabled ' + cacheDisabled); // eslint-disable-line no-console,prefer-template,
+            console.log('cacheDisabled typeof ' + typeof cacheDisabled); // eslint-disable-line no-console,prefer-template
             if (generateJobSummary) {
                 yield (0, summary_1.renderSummary)(sdkVersion, buildToolsVersion, ndkVersion, cmakeVersion, savedCacheEntry);
             }
