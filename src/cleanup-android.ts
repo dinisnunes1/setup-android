@@ -29,6 +29,7 @@ async function run(): Promise<void> {
       )
     }
 
+    console.log("generateJobSummary" + generateJobSummary) 
     if (generateJobSummary) {
       await renderSummary(
         sdkVersion,
