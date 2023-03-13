@@ -14,10 +14,13 @@ async function run(): Promise<void> {
     const buildToolsVersion = core.getInput(constants.INPUT_BUILD_TOOLS_VERSION)
     const ndkVersion = core.getInput(constants.INPUT_NDK_VERSION)
     const cmakeVersion = core.getInput(constants.INPUT_CMAKE_VERSION)
-    const cacheDisabled = Boolean(core.getInput(constants.INPUT_CACHE_DISABLED))
-    const generateJobSummary = Boolean(
-      core.getInput(constants.INPUT_GENERATE_JOB_SUMMARY)
+    const cacheDisabled = core.getBooleanInput(constants.INPUT_CACHE_DISABLED)
+    const generateJobSummary = core.getBooleanInput(
+      constants.INPUT_GENERATE_JOB_SUMMARY
     )
+
+    core.info(`cache-disabled: ${cacheDisabled}`)
+    core.info(`generate-job-summary: ${generateJobSummary}`)
 
     let savedCacheEntry
     if (!cacheDisabled) {
@@ -31,9 +34,6 @@ async function run(): Promise<void> {
 
     console.log(`generateJobSummary ${generateJobSummary}`) // eslint-disable-line no-console
     console.log('generateJobSummary typeof ' + typeof generateJobSummary) // eslint-disable-line no-console,prefer-template
-    console.log('_________________') // eslint-disable-line no-console
-    console.log(`cacheDisabled ${cacheDisabled}`) // eslint-disable-line no-console
-    console.log('cacheDisabled typeof ' + typeof cacheDisabled) // eslint-disable-line no-console,prefer-template
 
     if (generateJobSummary) {
       await renderSummary(
